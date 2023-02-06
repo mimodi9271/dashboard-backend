@@ -11,6 +11,7 @@ const autho = require("../middleware/autho-rization");
 
 router.get("/me", autho, async (req, res) => {
   const user = await User.findById(req.user._id);
+  console.log(req)
   res.send(user);
 });
 
